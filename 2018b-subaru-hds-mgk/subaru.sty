@@ -1,0 +1,575 @@
+% subaru.sty
+%
+% Style file for Subaru proposals S18A
+%
+
+% Page layout commands
+\pagestyle{empty}
+\headheight 0mm
+\headsep 0mm
+\oddsidemargin -31pt
+\parindent 0pt
+\parskip 3pt
+\topmargin -42pt
+\textwidth 526pt
+\textheight 750pt
+\raggedbottom
+
+\def\semester#1{\gdef\@semester{#1}}
+    \gdef\@semester{SXXA}
+\def\proposalid#1{\ifx\empty#1\else\gdef\@proposalid{#1}\fi}
+    \gdef\@proposalid{\@semester-}
+\def\receivedate#1{\ifx\empty#1\else\gdef\@receivedate{#1}\fi}
+    \gdef\@receivedate{\hspace*{19pt}/\hspace*{19pt}/}
+\def\@maxnormalnights{5}
+\def\@maxintensivenights{20}
+\def\secondchoice#1{\gdef\@secondchoice{{\small\it 2nd choice: }#1}}
+    \gdef\@secondchoice{}
+\def\orcomment#1{\gdef\@orcomment{{\small\it comments: }#1}}
+    \gdef\@orcomment{}
+\def\targetcomment#1{\gdef\@targetcomment{#1}}
+    \gdef\@targetcomment{}
+\def\butargetcomment#1{\gdef\@butargetcomment{#1}}
+    \gdef\@butargetcomment{}
+\def\coiflag#1{\gdef\@coiflag{#1}}
+    \gdef\@coiflag{}
+\def\targetflag#1{\gdef\@targetflag{#1}}
+    \gdef\@targetflag{}
+
+\def\subarulogo{\special{psfile=subaru_bw.ps voffset=-60 hoffset=-6 hscale=40 vscale=40}}
+
+\def\remoteobs{\gdef\@remoteobs{yes}}
+\def\remotemtk{\gdef\@remotemtk{yes}}
+\def\obstoo{\gdef\@obstoo{yes}}
+\def\obstcritical{\gdef\@obstcritical{yes}}
+\def\smokacheck{\gdef\@smokacheck{yes}}
+\def\@maxnights{\@maxnormalnights}
+\def\intensive{\gdef\@intensive{yes}
+               \def\@maxnights{\@maxintensivenights}}
+\def\thesis#1#2{\gdef\@student{#1}\gdef\@thesis{#2}}
+    \gdef\@student{}\gdef\@thesis{}
+\def\minnights#1{\ifx\empty#1\else\gdef\@minnights{#1}\fi}
+\def\totnights#1{\ifx\empty#1\else\gdef\@totnights{#1}\fi}
+
+
+% Scientific categories
+\def\SolarSystem{\ifx\undefined\@scicat
+    \gdef\@SolarSystem{$\star$}\def\@scicat{1}\fi}
+    \gdef\@SolarSystem{}
+\def\NormalStars{\ifx\undefined\@scicat
+    \gdef\@NormalStars{$\star$}\def\@scicat{1}\fi}
+    \gdef\@NormalStars{}
+\def\ExtrasolarPlanets{\ifx\undefined\@scicat
+    \gdef\@ExtrasolarPlanets{$\star$}\def\@scicat{1}\fi}
+    \gdef\@ExtrasolarPlanets{}
+\def\StarandPlanetFormation{\ifx\undefined\@scicat
+    \gdef\@StarPlanetFormation{$\star$}\def\@scicat{1}\fi}
+    \gdef\@StarPlanetFormation{}
+\def\MetalPoorStars{\ifx\undefined\@scicat
+    \gdef\@mpStars{$\star$}\def\@scicat{1}\fi}
+    \gdef\@mpStars{}
+\def\CompactObjectsandSNe{\ifx\undefined\@scicat
+    \gdef\@SNe{$\star$}\def\@scicat{1}\fi}
+    \gdef\@SNe{}
+\def\MilkyWay{\ifx\undefined\@scicat
+    \gdef\@MilkyWay{$\star$}\def\@scicat{1}\fi}
+    \gdef\@MilkyWay{}
+\def\LocalGroup{\ifx\undefined\@scicat
+    \gdef\@LocalGroup{$\star$}\def\@scicat{1}\fi}
+    \gdef\@LocalGroup{}
+\def\ISM{\ifx\undefined\@scicat
+    \gdef\@ISM{$\star$}\def\@scicat{1}\fi}
+    \gdef\@ISM{}
+\def\NearbyGalaxies{\ifx\undefined\@scicat
+    \gdef\@NearbyGalaxies{$\star$}\def\@scicat{1}\fi}
+    \gdef\@NearbyGalaxies{}
+\def\AGNandQSOActivity{\ifx\undefined\@scicat
+    \gdef\@AGN{$\star$}\def\@scicat{1}\fi}
+    \gdef\@AGN{}
+\def\QSOAbsorptionLinesandIGM{\ifx\undefined\@scicat
+    \gdef\@IGM{$\star$}\def\@scicat{1}\fi}
+    \gdef\@IGM{}
+\def\Cosmology{\ifx\undefined\@scicat
+    \gdef\@Cosmology{$\star$}\def\@scicat{1}\fi}
+    \gdef\@Cosmology{}
+\def\GravitationalLenses{\ifx\undefined\@scicat
+    \gdef\@GLenses{$\star$}\def\@scicat{1}\fi}
+    \gdef\@GLenses{}
+\def\ProtoClustersandGalaxyEnvironment{\ifx\undefined\@scicat
+    \gdef\@pClustersGalEnv{$\star$}\def\@scicat{1}\fi}
+    \gdef\@pClustersGalEnv{}
+\def\ClustersofGalaxies{\ifx\undefined\@scicat
+    \gdef\@Clusters{$\star$}\def\@scicat{1}\fi}
+    \gdef\@Clusters{}
+\def\HighzGalaxiesLAEsLBGs{\ifx\undefined\@scicat
+    \gdef\@HzGLAE{$\star$}\def\@scicat{1}\fi}
+    \gdef\@HzGLAE{}
+\def\HighzGalaxiesothers{\ifx\undefined\@scicat
+    \gdef\@HzGOther{$\star$}\def\@scicat{1}\fi}
+    \gdef\@HzGOther{}
+\def\Miscellaneous{\ifx\undefined\@scicat
+    \gdef\@Misc{$\star$}\def\@scicat{1}\fi}
+    \gdef\@Misc{}
+
+
+% Stuff for the front page
+% PI information: name
+\def\PIfirstname#1{\gdef\@PIfirstname{#1}}
+    \gdef\@PIfirstname{}
+\def\PIlastname#1{\gdef\@PIlastname{#1}}
+    \gdef\@PIlastname{}
+
+% PI information: institute
+\def\PIinstitute#1{\gdef\@PIinstitute{#1}}
+    \gdef\@PIinstitute{}
+\def\PIaddress#1{\gdef\@PIaddress{#1}}
+    \gdef\@PIaddress{}
+\def\PIemail#1{\gdef\@PIemail{#1}}
+    \gdef\@PIemail{}
+\def\PIphone#1{\gdef\@PIphone{#1}}
+    \gdef\@PIphone{}
+
+% Redefine the abstract command
+\renewenvironment{abstract}%
+{\maketoppageone\begin{picture}(1,1)\begin{minipage}[t]{\textwidth}}%
+{\end{minipage}\end{picture}}
+
+% Lines for page 1
+\def\maketoppageone{\subarulogo\begin{picture}(0,744)
+\put(-9,0){\framebox(544,744){}}
+\put(-9,634){\line(1,0){544}}
+\put(-9,588){\line(1,0){544}}
+\put(-9,505){\line(1,0){544}}
+\put(-9,408){\line(1,0){544}}
+\put(-9,254){\line(1,0){544}}
+\put(-9,88){\line(1,0){544}}
+\put(-9,37){\line(1,0){544}}
+\put(262,92){\line(0,1){147}}
+\put(388,697){\framebox(135,41){}}
+\put(-9,748){\makebox{\small(Page 1)}}
+\end{picture}\vspace*{-731pt}
+
+\hspace*{55pt}{\Large Subaru Telescope}\\
+\hspace*{55pt}{National Astronomical Observatory of Japan}
+
+\vspace*{-39pt}\hspace*{390pt}\makebox[60pt][l]{Semester}%
+\underline{\makebox[68pt][l]{\sf\@semester}\raisebox{-2pt}{}}\\
+\hspace*{390pt}\makebox[60pt][l]{Proposal ID}%
+\underline{\makebox[68pt][l]{\sf\@proposalid}\raisebox{-2pt}{}}\\
+\hspace*{390pt}\makebox[60pt][l]{Received}%
+\underline{\makebox[68pt][l]{\sf\@receivedate}\raisebox{-2pt}{}}
+
+\vspace*{-2pt}\begin{center}
+{\LARGE\bf Application Form for Telescope Time}\\
+\vspace{5pt}
+{\LARGE\bf (Normal+Intensive Programs)}
+\end{center}
+
+\vspace*{6pt}\hspace*{-5pt}{\large1. Title of Proposal}
+
+\vspace*{3pt}\vbox to 12pt{\LARGE\bf\sf\@title}
+
+\vspace*{13pt}\hspace*{-5pt}{\large2. Principal Investigator}
+
+
+% Print PI information
+\makebox[0.1\textwidth][l]{Name:}%
+\underline{\makebox[0.34\textwidth][l]{\@PIlastname}%
+           \makebox[0.34\textwidth][l]{\@PIfirstname}\raisebox{-2pt}{}}\\[3pt]
+\makebox[0.1\textwidth][l]{Institute:}%
+\underline{\makebox[0.9\textwidth][l]{\@PIinstitute}\raisebox{-2pt}{}}\\[3pt]
+\makebox[0.18\textwidth][l]{Mailing Address:}%
+\underline{\makebox[0.82\textwidth][l]{\@PIaddress}\raisebox{-2pt}{}}\\[3pt]
+\makebox[0.18\textwidth][l]{E-mail Address:}%
+\underline{\makebox[0.40\textwidth][l]{\@PIemail}\raisebox{-2pt}{}}%
+\hspace*{0.02\textwidth}%
+\makebox[0.1\textwidth][l]{Phone:}%
+\underline{\makebox[0.30\textwidth][l]{\@PIphone}\raisebox{-2pt}{}}
+
+\vspace*{5pt}\hspace*{-5pt}{\large3. Scientific Category}
+
+\begin{picture}(510,70)
+\put(0,60){\framebox(10,10){\@SolarSystem}
+ \raisebox{3pt}{\small~Solar System}}
+\put(115,60){\framebox(10,10){\@NormalStars}
+ \raisebox{3pt}{\small~Normal Stars}}
+\put(265,60){\framebox(10,10){\@ExtrasolarPlanets}
+ \raisebox{3pt}{\small~Extrasolar Planets}}
+\put(400,60){\framebox(10,10){\@StarPlanetFormation}
+ \raisebox{3pt}{\small~Star and Planet Formation}}
+\put(0,45){\framebox(10,10){\@mpStars} 
+ \raisebox{3pt}{\small~Metal-Poor Stars}}   
+\put(115,45){\framebox(10,10){\@SNe}
+ \raisebox{3pt}{\small~Compact Objects and SNe}}
+\put(265,45){\framebox(10,10){\@MilkyWay}
+ \raisebox{3pt}{\small~Milky Way}}
+\put(400,45){\framebox(10,10){\@LocalGroup}
+ \raisebox{3pt}{\small~Local Group}}
+\put(0,30){\framebox(10,10){\@ISM}
+ \raisebox{3pt}{\small~ISM}}
+\put(115,30){\framebox(10,10){\@NearbyGalaxies}
+ \raisebox{3pt}{\small~Nearby Galaxies}}
+\put(265,30){\framebox(10,10){\@AGN}
+ \raisebox{3pt}{\small~AGN and QSO Activity}}
+\put(400,30){\framebox(10,10){\@IGM}
+ \raisebox{3pt}{\small~QSO Abs. Lines and IGM}}
+\put(0,15){\framebox(10,10){\@Cosmology} 
+ \raisebox{3pt}{\small~Cosmology}} 
+\put(115,15){\framebox(10,10){\@GLenses} 
+ \raisebox{3pt}{\small~Gravitational Lenses}} 
+\put(265,15){\framebox(10,10){\@pClustersGalEnv}   
+ \raisebox{3pt}{\small~Proto-Clusters and Galaxy Environment}}
+\put(0,0){\framebox(10,10){\@Clusters}
+ \raisebox{3pt}{\small~Clusters of Galaxies}}  
+\put(115,0){\framebox(10,10){\@HzGLAE}
+ \raisebox{3pt}{\small~High-$z$ Galaxies(LAEs, LBGs)}}
+\put(265,0){\framebox(10,10){\@HzGOther}
+ \raisebox{3pt}{\small~High-$z$ Galaxies(others)}}
+\put(400,0){\framebox(10,10){\@Misc} 
+ \raisebox{3pt}{\small~Miscellaneous}} 
+\ifx\undefined\@scicat
+ \put(120,75){\bf Please select a valid scientific category.}
+\fi
+\end{picture}
+
+\vspace*{6pt}\hspace*{-5pt}{\large4. Abstract}~{\small\it(approximately 200 words)}
+
+}
+
+% The Co-Is; use a picture environment to ensure fixed height
+\newenvironment{investigators}%
+{\vspace*{125pt}\hspace*{-5pt}{\large5. Co-Investigators} 
+
+\underline{\makebox[0.23\textwidth][l]{Name\raisebox{-2pt}{}}%
+\makebox[0.29\textwidth][l]{Institute}%
+\makebox[0.23\textwidth][l]{Name}%
+\makebox[0.25\textwidth][l]{Institute}}
+
+\begin{picture}(510,125)
+\newcount\@CoIypos \@CoIypos=119
+\newcount\@CoIxpos \@CoIxpos=0}
+{\put(450,140){\vbox to 15pt{\@coiflag}}\end{picture}
+
+\vspace*{5pt}\hspace*{-5pt}{\large6. Thesis Work}\\
+\begin{picture}(510,0)
+\ifx\empty\@student\put(0,-5){\framebox(10,10){}}
+\else
+\put(0,-5){\framebox(10,10)[c]{$\star$}}
+\fi
+\put(20,-3){This proposal is linked to the thesis preparation of}
+\put(250,-1){\underline{\makebox[260pt][l]{\@student\raisebox{-2pt}}}}
+\put(20,-16){\underline{\makebox[490pt][l]{\@thesis\raisebox{-2pt}}}}
+\end{picture}
+
+\vspace*{22pt}\hspace*{-5pt}{\large7. Subaru Open Use Intensive Programs}\\
+\begin{picture}(510,13)
+\put(0,0){\framebox(10,10){} \raisebox{2pt}{\hspace*{5pt}This
+is a proposal for Intensive Programs.}}
+\ifx\undefined\@intensive\else{\put(0,0){\makebox(10,10){$\star$}}}\fi
+\end{picture}
+\eject}
+
+\newcommand{\CoI}[4]{
+\ifnum\@CoIxpos<500
+\put(\@CoIxpos,\@CoIypos){\makebox[0.23\textwidth][l]{#1 #2}#3}\fi
+\advance\@CoIypos by -13
+\ifnum\@CoIypos<0 \@CoIypos=119\advance\@CoIxpos by 273\fi}
+
+% Lines for page 2
+\def\maketoppagetwo{
+\begin{picture}(0,744)
+\put(-9,0){\framebox(544,744){}}
+\put(-9,520){\line(1,0){544}}
+\put(-9,343){\line(1,0){544}}
+\put(-9,120){\line(1,0){544}}
+\put(-9,748){\makebox{\small(Page 2)}}
+\put(535,748){\makebox(0,0)[br]{\small Proposal ID
+\underline{\makebox[68pt][l]{\sf\@proposalid}\raisebox{-1pt}{}}}}
+\end{picture}
+\vspace*{-749pt}
+
+} % end of \maketoppagetwo (need a blank line after \vspace)
+
+\newenvironment{publications}%
+{
+\maketoppagetwo
+\vspace*{3pt}\hspace*{-5pt}{\large8. List of Applicants' Related
+Publications}~{\small\it(last 5 years)}
+
+\begin{picture}(1,1)\begin{minipage}[t]{\textwidth}}%                                                    
+{\end{minipage}\end{picture}}
+
+
+\newenvironment{relationto}%
+{
+\vspace{193pt}
+\hspace*{-5pt}{\large9. Condition of Closely-Related Past and Scheduled Observations}
+
+ {\small\it Please fill in here, if this proposal is a continuation of
+ (or inextricably related with) the previously accepted proposals.
+ This is to describe what kind of relevant/similar proposals have 
+ existed in the past. If your scheduled observation exists, please describe it.}
+
+\underline{\makebox[0.12\textwidth][l]{\small Proposal ID}%
+\makebox[0.48\textwidth][l]{\small Title (may be abbreviated)}%
+\makebox[0.30\textwidth][c]{\small Observational condition}%
+\makebox[0.10\textwidth][c]{\small Achievement (\%)}}
+
+\begin{picture}(510,111)          % 92 needs adjustment
+\newcount\@runypos \@runypos=106} % 82 needs adjustment
+{\end{picture}\vspace*{-8pt} }
+
+\newcommand{\relatobs}[4]{
+\ifnum\@runypos>0
+\put(0,\@runypos){\large\makebox[0.12\textwidth][l]{#1}%
+\makebox[0.48\textwidth][l]{#2}
+\makebox[0.30\textwidth][c]{#3}#4}\fi
+\advance\@runypos by -15}
+
+
+\newenvironment{previoususe}%
+{\vspace*{8pt}
+\hspace*{-5pt}{\large10. Post-Observation Status and Publications}
+
+{\small\it Please report the status or outcome of your main 
+Subaru observations carried out in the past. All observations 
+relevant to this proposal should be included here. Similarly, 
+all those within last 3 years with which you were involved as P.I. 
+must be reported.}
+
+\underline{\makebox[0.10\textwidth][l]{\small Year/Month}%
+\makebox[0.12\textwidth]{\small Proposal ID}%
+\makebox[0.18\textwidth]{\small PI name}%
+\makebox[0.33\textwidth][l]{\small Status: completion/reduction/analysis}%
+\makebox[0.27\textwidth][l]{\small Status: publication}}
+
+\begin{picture}(510,160)
+\newcount\@runypos \@runypos=152}%
+{\end{picture}\vspace*{-8pt}}
+
+\newcommand{\pastrun}[5]{
+\ifnum\@runypos>0
+\put(0,\@runypos){\large\makebox[0.10\textwidth][l]{#1}%                                                         
+\makebox[0.12\textwidth]{#2}%                                                                                  
+\makebox[0.18\textwidth][l]{#3}%                                                                               
+\makebox[0.33\textwidth][l]{#4}#5}\fi
+\advance\@runypos by -16}
+
+\def\experience#1{\vspace*{8pt}\hspace*{-5pt}%
+{\large11. Experience}
+
+\vspace*{3pt}\vbox to 53pt{\small#1\vfil}
+\eject
+}
+
+% Lines for page 3
+\def\maketoppagethree{
+\begin{picture}(0,744)
+\put(-9,0){\framebox(544,744){}}
+\put(-9,710){\line(1,0){544}}
+\put(-9,555){\line(1,0){544}}
+\put(-9,470){\line(1,0){544}}
+\put(-9,748){\makebox{\small(Page 3)}}
+\put(535,748){\makebox(0,0)[br]{\small Proposal ID
+\underline{\makebox[68pt][l]{\sf\@proposalid}\raisebox{-1pt}{}}}}
+\end{picture}\vspace*{-749pt}
+
+\vspace*{3pt}\hspace*{-5pt}{\large Title of Proposal}
+
+\vspace*{0pt}\vbox to 12pt{\LARGE\bf\sf\@title}
+
+} % end of \maketoppagethree
+
+\newenvironment{observingrun}%
+{\maketoppagethree
+
+\vspace*{4pt}\hspace*{-5pt}{{\large12. Observing Run}
+
+\underline{\makebox[0.20\textwidth][l]{Instrument}%
+\makebox[0.03\textwidth]{\#Nights}%
+\makebox[0.13\textwidth]{Moon}%
+\makebox[0.20\textwidth][l]{Preferred Dates}%
+\makebox[0.21\textwidth][l]{Acceptable Dates}%
+\makebox[0.23\textwidth][l]{Observing Modes}}}
+
+\begin{picture}(510,80)
+\newcount\@runypos \@runypos=73}%
+{
+\put(0,15){\vbox to 23pt{\small \@secondchoice \vfil}}
+\put(0,0){\vbox to 15pt{\small \@orcomment \vfil}}
+\put(0,-30){\large Total Requested Number of Nights\hspace*{5mm}%
+\framebox[30pt]{\large\number\@totnights}\hspace*{10mm}%
+\large Minimum Acceptable Number of Nights\hspace*{5mm}%
+\framebox[30pt]{\large\number\@minnights}}
+\end{picture}
+}
+
+% A new observing run...
+\newcommand{\run}[6]{
+\ifnum\@runypos>0
+\put(0,\@runypos){\makebox[0.20\textwidth][l]{#1}%
+\makebox[0.03\textwidth]{#2}%
+\makebox[0.13\textwidth]{#3}%
+\makebox[0.20\textwidth][l]{#4}%
+\makebox[0.21\textwidth][l]{#5}%
+\makebox[0.23\textwidth][l]{#6}}\fi
+\advance\@runypos by -14}
+
+\newenvironment{schedule}{}
+{\vspace*{-77pt}
+\begin{picture}(510,13)
+\put(160,-2){\framebox(10,10){} ToO \hspace{5pt} \framebox(10,10){} Time Critical}
+\ifx\undefined\@obstoo\else{\put(160,-2){\makebox(10,10){$\star$}}}\fi
+\ifx\undefined\@obstcritical\else{\put(204,-2){\makebox(10,10){$\star$}}}\fi
+\put(300,-1){{\it\underline{Remote Observation}}}
+\put(400,-2){\framebox(10,10){} at Hilo \hspace{5pt} \framebox(10,10){} at Mitaka}
+\ifx\undefined\@remoteobs\else{\put(400,-2){\makebox(10,10){$\star$}}}\fi
+\ifx\undefined\@remotemtk\else{\put(456,-2){\makebox(10,10){$\star$}}}\fi
+\end{picture}\vspace*{60pt}
+}
+
+% New commands for page 2: just \vboxes filled with text
+\def\scheduling#1{\vspace{37pt}\hspace*{-5pt}{\large13. Scheduling Requirements }
+
+\vspace*{3pt}\vbox to 53pt{\small#1\vfil}}
+
+\newenvironment{targets}{\vspace*{10pt}\hspace*{-5pt}%
+{\large14. List of Targets}
+
+\underline{\makebox[0.3\textwidth][l]{Target Name}%
+\makebox[0.13\textwidth][l]{RA}%
+\makebox[0.13\textwidth][l]{Dec}%
+\makebox[0.44\textwidth][l]{Magnitude (Band)}}
+
+\begin{picture}(510,345)
+\newcount\@targetypos \@targetypos=340}%
+{
+\put(300,363){\vbox to 15pt{\@targetflag}}
+\put(0,-65){\vbox to 60pt{\small \@targetcomment \vfil}}
+\end{picture}\vspace*{-11pt}
+}
+
+\newcommand{\target}[4]{
+\ifnum\@targetypos>0 %Only so many targets can be printed!
+\put(0,\@targetypos){\makebox[0.3\textwidth][l]{#1}%
+\makebox[0.13\textwidth][l]{#2}%
+\makebox[0.13\textwidth][l]{#3}%
+\parbox[t]{0.44\textwidth}{#4}}\fi
+\advance\@targetypos by -13}
+
+\def\continuation#1#2{\gdef\@continid{#1}\gdef\@contintitle{#2}}
+    \gdef\@continid{}\gdef\@contintitle{}
+
+% Lines for page 4
+\newenvironment{technicalinfo}%
+{\eject
+\begin{picture}(0,744)
+\put(-9,0){\framebox(544,744){}}
+\put(-9,314){\line(1,0){544}}  % orig=265:040828,r.o.
+\put(-9,248){\line(1,0){544}}  % sec16 - sec17
+\put(-9,164){\line(1,0){544}}  % sec17 - sec18
+\put(-9, 87){\line(1,0){544}}  % sec18 - sec19
+\put(-9,748){\makebox{\small(Page 4)}}
+\put(535,748){\makebox(0,0)[br]{\small Proposal ID
+\underline{\makebox[68pt][l]{\sf\@proposalid}\raisebox{-1pt}{}}}}
+\end{picture}\vspace*{-749pt}
+
+\hspace*{-5pt}{\large15. Observing Method and Technical Details
+
+\small\it Please describe in detail about instrument configuration,
+ exposure time, required sensitivity, and so on.}
+
+\begin{picture}(1,1)\begin{minipage}[t]{\textwidth}\small}%
+{\end{minipage}\end{picture}\vspace{385pt}}
+
+\def\instruments#1{\hspace*{-5pt}%
+{\large16. Instrument Requirements~{\small\it Specify the number of 
+masks (MOIRCS/MOS) or the set of filters to use (HSC).}}
+
+\vspace*{3pt}\vbox to 45pt{\small#1\vfil}}
+
+\def\backup#1{\hspace*{-5pt}%
+{\large17. Backup Proposal in Poor Conditions~{\small\it(specify object names)}}
+
+\vspace*{3pt}\vbox to 63pt{\small#1\vfil}}
+
+\def\smokacomment#1{\hspace*{-5pt}%
+{\large18. Public Data Archive of Subaru}\\
+\vspace*{1pt}\vbox to 48pt{\vspace*{1pt}\hspace*{0pt} {\small\it If your targets have already been observed by Subaru in the past, please describe why you need to observe them again.}\vspace{3pt} \\ \small#1\vfil}}
+
+\newenvironment{smoka}{}
+{\vspace*{0pt}
+\begin{picture}(510,0)
+\put(300,61){\framebox(10,10){}\raisebox{2pt}{\hspace*{5pt}
+\it\underline{Yes, I have checked SMOKA.}}}
+\ifx\undefined\@smokacheck\else{\put(300,61){\makebox(10,10){$\star$}}}\fi
+\end{picture}
+}
+
+% Another \vbox
+\def\hscssp#1{\hspace*{-5pt}%
+{\large19. Justify Duplications with the HSC SSP~{\small\it(for HSC proposers)}}
+
+\vspace*{3pt}\vbox to 55pt{\small#1\vfil}}
+
+
+% Extra sheet for extra targets
+% =======================<<< end new part s05A testing==
+% Extra sheet for extra targets
+\newenvironment{moretargets}%
+{\eject
+\begin{picture}(0,744)
+\put(-9,0){\framebox(544,744){}}
+\put(-9,748){\makebox{\small(Additional Sheet for List of Targets)}}
+\put(535,748){\makebox(0,0)[br]{\small Proposal ID
+\underline{\makebox[68pt][l]{\sf\@proposalid}\raisebox{-1pt}{}}}}
+\end{picture}\vspace*{-747pt}
+
+\hspace*{-5pt}{\large14+. List of more Targets}
+
+\underline{\makebox[0.3\textwidth][l]{Target Name}%
+\makebox[0.13\textwidth][l]{RA}%
+\makebox[0.13\textwidth][l]{Dec}%
+\makebox[0.44\textwidth][l]{Magnitude (Band)}}
+
+\begin{picture}(510,696)
+\newcount\@targetypos \@targetypos=689}%
+{\end{picture}\vspace*{-8pt}}
+
+
+\newenvironment{backuptargets}%
+{\eject
+\begin{picture}(0,744)
+\put(-9,0){\framebox(544,744){}}
+\put(-9,748){\makebox{\small(Additional Sheet for List of Backup Targets)}}
+\put(535,748){\makebox(0,0)[br]{\small Proposal ID
+\underline{\makebox[68pt][l]{\sf\@proposalid}\raisebox{-1pt}{}}}}
+\end{picture}\vspace*{-747pt}
+
+\hspace*{-5pt}{\large17+. List of Backup Targets}
+
+\underline{\makebox[0.3\textwidth][l]{Target Name}%
+\makebox[0.13\textwidth][l]{RA}%
+\makebox[0.13\textwidth][l]{Dec}%
+\makebox[0.44\textwidth][l]{Magnitude (Band)}}
+
+\begin{picture}(510,636)
+\newcount\@targetypos \@targetypos=629}%
+{
+\put(0,-65){\vbox to 60pt{\small \@butargetcomment \vfil}}
+\end{picture}\vspace*{-8pt}}
+
+
+
+% And that's it!
+
+% Some AASTeX goodies
+\def\ion#1#2{#1$\;${\sc\@roman{#2}}\relax}
+\def\lesssim{\mathrel{\hbox{\rlap{\hbox{\lower4pt\hbox{$\sim$}}}\hbox{$<$}}}}
+\def\gtrsim{\mathrel{\hbox{\rlap{\hbox{\lower4pt\hbox{$\sim$}}}\hbox{$>$}}}}
+
+
+
+
+
+
