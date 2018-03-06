@@ -1,7 +1,12 @@
 \documentclass{article}
-\usepackage{subaru}
 
+\usepackage{subaru}
+\usepackage{soul}
+%\usepackage{color}
 \begin{document}
+
+
+\newcommand{\todo}[1]{\ul{\MakeUppercase{\textbf{#1}}}}
 
 \semester{}
 \proposalid{}
@@ -47,33 +52,34 @@
 
 %%%%%%%%%% 4. Abstract %%%%%%%%%%
 \begin{abstract}
+Stars with unusual chemical abundances offer clues about rare astrophysical events or nucleosynthetic pathways. One such example are stars with significantly depleted magnesium and enhanced potassium ($[{\rm Mg/Fe}] < -1$; $[{\rm K/Fe}] > 1$). Stars with this strong signature have, to date, only been found in the globular cluster NGC~2419. The origin of this pattern remains unknown. Theoretical attempts to reproduce it require unrealistic temperature conditions and nuclear cross-sections orders of magnitude above laboratory measurements. Stars in NGC~2419 show a correlation between the abundances of light (e.g. Mg, K) and neutron-capture elements, which could point to the responsible mechanism, but so far only 5 stars have detailed abundances measured. Chemical abundances are needed for more stars showing the Mg/K pattern to understand its peculiar origin. We have identified 112 Milky Way field stars with significantly enhanced [K/Fe] and depleted [Mg/Fe] from $\sim$500,000 giant stars in LAMOST. Our sample suggests that the mechanism responsible for peculiar abundances in NGC 2419 is not limited to globular clusters. We seek \todo{one grey} night with Subaru/HDS to observe \textbf{XX} candidates in order to measure detailed abundances and understand the origin of this unexplained signature.
 \end{abstract}
 
 %%%%%%%%%% 5. Co-Investigators %%%%%%%%%%
 %\CoI{first name}{last name}{institute}{email address}
 \begin{investigators}
 \CoI{Kemp}{Alexander}{Monash University}{ajkem1@student.monash.edu}
-%\CoI{Ho}{Anna}{Caltech}{ah@caltech.edu}
-%\CoI{Ness}{Melissa}{Columbia University}{melissa.ness@columbia.edu}
-%\CoI{Ji}{Alexander}{Carnegie Observatories}{aji@carnegiescience.edu}
 \CoI{Miles}{Matthew}{Monash University}{mtmil3@student.monash.edu}
 \CoI{Norfolk}{Brodie}{Monash University}{bjlee7@student.monash.edu}
-\CoI{}{}{}{}
-\CoI{}{}{}{}
-\CoI{}{}{}{}
-\CoI{}{}{}{}
-\CoI{}{}{}{}
+\CoI{Lattanzio}{John}{Monash University}{john.lattanzio@monash.edu}
+\CoI{Karakas}{Amanda}{Monash University}{amanda.karakas@monash.edu}
+\CoI{Schlaufman}{Kevin}{Johns Hopkins University}{kschlaufman@jhu.edu}
+\CoI{Ho}{Anna}{Caltech}{ah@caltech.edu}
+\CoI{Tout}{Christopher}{University of Cambridge}{cat@ast.cam.ac.uk}
+\CoI{Ness}{Melissa}{Columbia University}{melissa.ness@columbia.edu}
+\CoI{Ji}{Alexander}{Carnegie Observatories}{aji@carnegiescience.edu}
+%\CoI{}{}{}{}
+%\CoI{}{}{}{}
+%\CoI{}{}{}{}
+%\CoI{}{}{}{}
 %no need to fill \coiflag
-\coiflag{}
-
+%\coiflag{}
 %%%%%%%%%% 6. Thesis Work %%%%%%%%%%
 %\thesis{student name}{thesis title}
-\thesis{}{}
-
+%\thesis{}{}
 %%%%%%%%%% 7. Subaru Open Use Intensive Program %%%%%%%%%%
 % Uncomment this line if this is an Open Use Intensive Program
 %\intensive
-
 \end{investigators}
 
 %%%%%%%%%%%%
@@ -105,6 +111,11 @@
 \publication{Casey et al.}{\apj}{784}{19}{2014}
 \publication{Keller, Bessell, Frebel, Casey et al.}{\nature}{506}{463}{2014}
 \publication{Casey et al.}{\apj}{764}{39}{2013}
+% Karakas:
+\publication{Iliadis, Karakas et al.}{\apj}{818}{98}{2016}
+% Ho:
+\publication{Ho, Rix, Ness et al.}{\apj}{841}{40}{2017}
+\publication{Ho, Ness et al.}{\apj}{836}{5}{2017}
 % Ness:
 \publication{Ness, Hogg, Casey et al.}{\apj}{853}{198}{2018}
 \publication{Garcia Perez, Ness et al.}{\apj}{852}{91}{2018}
@@ -119,9 +130,6 @@
 \publication{Ness et al.}{\mnras}{432}{2092}{2013}
 \publication{Ness et al.}{\mnras}{430}{836}{2013}
 \publication{Ness et al.}{\apj}{756}{22}{2013}
-% Ho:
-\publication{Ho, Rix, Ness et al.}{\apj}{841}{40}{2017}
-\publication{Ho, Ness et al.}{\apj}{836}{5}{2017}
 % Ji
 \publication{Ji \& Frebel}{\apj}{}{accepted (arXiv:1802.07272)}{2018}
 \publication{Safarzadeh, Ji et al.}{\mnras}{}{accepted (arXiv:1712.03967)}{2017}
@@ -156,7 +164,7 @@
 \end{previoususe}
 
 %%%%%%%%%% 11. Experience %%%%%%%%%%
-\experience{PI Casey and CIs Ji and Ness are experts in high-resolution stellar spectroscopy, and CI Ho is an expert in low-resolution stellar spectroscopy. The remaining CIs are students. PI Casey, who will prepare and conduct the observations, has observed with the following telescope/instrument combinations:  Magellan/MIKE, VLT/UVES, Keck/HIRES, Gemini North/GMOS-N and Gemini South/GMOS-S (service mode), Mayall telescope/echelle, AAT/AAOmega, Automated Planet Finder (2.5 m) telescope, the ANU 2.3 m telescope, and the 2.2 m MPG/ESO telescope, and about a month of commissioning time with the SkyMapper (imaging) telescope. Casey has written bespoke \texttt{Python} reduction packages for several of these telescope/instrument combinations, and investigators have all written software for the analysis of both low- and high-resolution spectra (Ho, Ness, and Casey; Ji, Ness, and Casey, respectively). Casey has served as an expert reviewer for time allocation committees for Australia and Canada.}
+\experience{PI Casey and CIs Ji, Ness, and Schlaufman are experts in high-resolution stellar spectroscopy, and CI Ho is an expert in low-resolution stellar spectroscopy. CIs Lattanzio, Karakas, Tout are experts on stellar evolution, nucleosynthesis, and binary stars. The remaining CIs are students. PI Casey, who will prepare and conduct the observations, has observed with the following telescope/instrument combinations:  Magellan/MIKE, VLT/UVES, Keck/HIRES, Gemini North/GMOS-N and Gemini South/GMOS-S (service mode), Mayall telescope/echelle, AAT/AAOmega, Automated Planet Finder (2.5 m) telescope (service), the ANU 2.3 m telescope, and about a month of commissioning time with the SkyMapper (imaging) telescope. Casey has written bespoke \texttt{Python} reduction packages for several of these telescope/instrument combinations, and many co-investigators have written software for the analysis of both low- and high-resolution spectra (Ho, Ness, and Casey; Ji, Ness, and Casey, respectively).}
 
 
 %%%%%%%%%%%%
@@ -167,20 +175,20 @@
 %\run{instrument}{# of nights}{lunar phase}{preferred dates}{acceptable dates}{observing mode}
 % "totnights" is calcurated automatically by ProMS. No need to fill \totnights{}.
 \begin{observingrun}
+\run{HDS}{1}{Grey}{\todo{December?}}{\todo{Nov-Jan?}}{\todo{Remote at Hilo}}
 \run{}{}{}{}{}{}
 \run{}{}{}{}{}{}
-\run{}{}{}{}{}{}
-\minnights{0}
-\totnights{0}
+\minnights{1}
+\totnights{2}
 \secondchoice{}
 \orcomment{}
 \end{observingrun}
 
 %%%%%%%%%% 13. Scheduling Requirements %%%%%%%%%%
 \begin{schedule}
-\scheduling{}
+\scheduling{Request for remote observations at Hilo Base Facility. }
 % Uncomment the following line if you want to make remote observations at Hilo. 
-%\remoteobs
+\remoteobs
 % Uncomment the following line if you want to make remote observations at Mitaka. 
 %\remotemtk
 % Uncomment the following line if you want to make ToO observations. 
@@ -194,10 +202,10 @@
 % Equinox is J2000.0 unless otherwise specified in Comments on Targets
 % HH MM SS +/-DD MM SS or HH:MM:SS +/-DD:MM:SS are recommended for format of RA and Dec
 \begin{targets}
-\target{}{}{}{}
-\target{}{}{}{}
-\target{}{}{}{}
-\target{}{}{}{}
+% Candidates selected from mgk-candidates.csv
+% and formatted into candidates.tex by candidates.py
+% (candidates.tex required a little bit of text editing
+\input{candidates}
 % no need to fill \targetflag
 \targetflag{}
 \targetcomment{}
@@ -210,25 +218,36 @@
 
 %%%%%%%%%% 15. Observing Method and Technical Details %%%%%%%%%%
 \begin{technicalinfo}
+We propose to use the `Ra' setup with the default grating and a central wavelength of 5500\,\AA. We propose to use the atmospheric dispersion corrector (ADC In) with no image rotator. We propose to use the Messia5 acquisition system, with 4x1 binning (spatial x spectral) to improve S/N. The default echelle grating angle of 0.25\,$^\circ$ and detector rotation angle of $-1$\,$^\circ$ will be suitable for these observations. We propose to use the normal slit width of 0.4 arcseconds, and assume a seeing of 0.5 arcseconds.\\
+ 
+The instrument configurations specified above will provide a spectral resolution of 90,000 from 5106\,\AA\ to 7787\,\AA. This wavelength coverage includes a number of spectral lines that will be essential for our spectroscopic analysis, allowing us to estimate detailed chemical abundances in order to understand the nature of stars with peculiar Mg/K abundance patterns. For example, the proposed configuration provides us wavelength coverage includes H-$\alpha$ line at 6562\,\AA, as well as atomic absorption lines of Li, $\alpha$-capture elements (Mg, Ca, Si, Ti), odd-Z elements (Na, Al, K), Fe-peak elements (V, Mn, Sc, Cu, Ni, Fe), and neutron-capture elements (Eu, Ba, Sr, Y, Zr, among others). The gap between the blue and red CCD, 6378\,\AA\ to 6509\,\AA\ in this configuration, does not include any stellar spectral lines that are essential for our analysis. \\
+
+Based on the technical details above, we have calculated exposure times for all candidates in order to achieve a minimum S/N ratio of 40 per pixel at the bluest wavelength. Experience has demonstrated that, given the high-resolution of 90,000, a S/N ratio of 40 per pixel will be sufficient to confirm the stellar parameters we derive from low-resolution spectra, and estimate detailed chemical abundances.\\
+
+The exposure times listed in Section 13 for each candidate are calculated using the assumptions above, and requiring a S/N ratio of 40 per pixel at  the bluest wavelength. The candidates listed in Section 13 represent the brightest of our sample. We conservatively estimate average overheads of 5\,min per target. With these assumptions, we expect to be able to observe \todo{49} of our brightest candidates in \todo{2} December nights, assuming \todo{XXXX} hours of useful observing time per night.\\
+
+%We will be using natural guide stars (NGS) that are bright ($R < 14$), and as such we conservatively estimate average overheads of 5\,min per target (including 3\,min for acquisition). With 
+
+The radial velocities for all of our candidates are known from their LAMOST spectra. Under the assumption that all Mg/K candidates are single stars that are not experiencing any significant radial velocity excursions, we have preferentially selected candidates for high-resolution follow-up where the potassium lines at 7699\,\AA\ will be well-separated from the telluric A-band.
 \end{technicalinfo}
 
 %%%%%%%%%% 16. Instrument Requirements %%%%%%%%%%
-\instruments{}
+\instruments{Standard SETUP-Ra for HDS with default grating and 0.4 arcsecond slit size.}
 
 %%%%%%%%%% 17. Backup Proposal in Poor Conditions %%%%%%%%%%
-\backup{}
+\backup{\textbf{Brighter candidates? Bright Li-rich giants? Confirmed best and brightest metal-poor stars?}}
 
 %%%%%%%%%% 18. Public Data Archive of Subaru %%%%%
 \begin{smoka}
 % Uncomment the following line if you checked the public Subaru Telescope archive. 
-%\smokacheck
+\smokacheck
 % If you propose observations in spite that there are available data in the public data archive, 
 % please denote the reason in the following field. 
-\smokacomment{}
+\smokacomment{We checked SMOKA for HDS data for all 49 candidates and found no matches.}
 \end{smoka} 
 
 %%%%%%%%%% 19. Justify Duplications with the HSC SSP %%%%%%%%%%
-\hscssp{}
+\hscssp{N/A}
 
 
 %%%%%%%%%%%%%
