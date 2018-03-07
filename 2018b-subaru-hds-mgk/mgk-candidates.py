@@ -3,7 +3,7 @@ from astropy.table import Table
 from astropy.coordinates import SkyCoord
 from astropy import units as u
 from collections import OrderedDict
-
+import numpy as np
 candidates = Table.read("all-mgk-candidates.csv")
 
 # Only propose to observe V < 14
@@ -15,16 +15,18 @@ candidates.sort("ra")
 
 def exposure_time(vmag):
 
+    # see exposure-calculations.numbers
     exps = dict([
-        (9, 1200),
-        (10, 1300),
-        (11, 1400),
-        (12, 1500),
-        (13, 1600)
+        (9, 0),
+        (10, 200),
+        (11, 500),
+        (12, 1200),
+        (13, 2400),
+        (14, 3600)
     ])
 
     for mag, exp in exps.items():
-        if mag > vmag:
+        if mag > np.round(vmag, 1):
             print(vmag, mag, exp)
             return exp
 
@@ -65,6 +67,8 @@ with open("candidates.tex", "w") as fp:
 
 
 candidates.write("candidates.csv")
+
+raise a
 
 
 # Check SMOKA for each candidate.
