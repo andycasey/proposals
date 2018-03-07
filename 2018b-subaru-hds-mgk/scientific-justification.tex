@@ -72,13 +72,7 @@ Casey, A.~R. (PI), Kemp, A.~J., Miles, M.~T., Norfolk, B.~J., Lattanzio, J.~C., 
 Observations reveal that stars in the globular cluster NGC~2419 have potassium abundances three orders of magnitude higher than galactic chemical evolution model predictions, and magnesium abundances an order of magnitude below typical Milky Way values. This abundance signature remains unexplained. Detailed abundances for 12 stars in NGC~2419 show that the Mg/K abundances are correlated with neutron-capture abundances ($Z > 30$), suggesting that either pair-instability supernovae, or super asymptotic giant branch stars with a binary companion, may be responsible. Detailed abundances for more Mg/K stars can be used to test these hypotheses. We have identified 112 stars with significantly enhanced [K/Fe] and depleted [Mg/Fe] from $\sim$500,000 stars in LAMOST. We request \NumNights\ with Subaru/HDS to measure detailed chemical abundances in the brightest \NumStars\ candidates and test hypotheses for the origin of peculiar Mg/K stars.
 \end{highlightbox}\vspace{-\parskip}
 
-The production of potassium in the Milky Way is one of the most significant points of tension between observations and galactic chemical evolution models: the predicted level of potassium in the Milky Way is an order of magnitude lower than what is shown by the observations[1]. This discrepancy suggests that there must be other mechanisms, or other nucleosynthetic pathways, that are contributing to the production of potassium in the Milky Way. This deficiency became more notable after observations of NGC~2419 revealed that about half of the stars studied have peculiarly high potassium abundances (up to $[{\rm K/Fe}] = 2$), two orders of magnitude higher than the bulk Milky Way composition at the same metallicity[2,3]. The high abundance ratios of [K/Fe] are complimented by peculiarly low abundance ratios of magnesium ($[{\rm Mg/Fe}] < -1$), an order of magnitude lower than what is observed in the Milky Way. This signature has, to date, not been observed elsewhere in the Milky Way or its satellite systems.\footnote{There are claims that the same abundance signature is observed in NGC~2808[4], but our Figure~\ref{fig:mgk} shows the pattern in NGC~2808 is limited to a mild correlation in Mg-K abundances. Another study[5] reports on a star in the ultra-faint dwarf galaxy Tri~II with the peculiar Mg/K signature, but this claim is disputed by follow-up observations by CI Ji.}
-
-
-Theoretical attempts to reproduce the Mg/K signature find that temperatures between 100\,MK and 200\,MK are necessary unless extreme densities are invoked ($>10^8\,{\rm g\,cm}^{-3}$). These calculations, if correct, rule out many mechanisms, including core- and shell-burning of low-mass stars, high-mass and super-massive stars, and normal asymptotic giant branch stars. Two of the potential mechanisms remaining are pair-instability supernovae, and super asymptotic giant branch stars with a binary companion. A large sample of Mg/K stars with detailed chemical abundances are needed to test these hypotheses, including odd-Z (Na, Al, K), $\alpha$-particle capture (Ca, Ti, Si, Mg), Fe-peak (Sc, V, Mn, Ni, Cr, Fe), and neutron-capture elements. 
-For some  stars in NGC~2419 where high-resolution spectra have been obtained, those data indicate a correlation between the abundances of neutron-capture elements, with the magnesium and potassium abundances. Unfortunately the existing sample of abundances are insufficient to discriminate between these hypotheses, and the distance to NGC~2419, 85\,kpc, makes it prohibitively expensive to acquire high signal-to-noise (S/N), high-resolution spectra for a large number of stars.
-
-
+The production of potassium in the Milky Way is one of the most significant points of tension between observations and galactic chemical evolution models: the predicted level of potassium in the Milky Way is an order of magnitude lower than what is shown by the observations[1]. This discrepancy suggests that there must be other mechanisms, or other nucleosynthetic pathways, that are contributing to the production of potassium in the Milky Way. This deficiency became more notable after observations of NGC~2419 revealed that about half of the stars studied have peculiarly high potassium abundances (up to $[{\rm K/Fe}] = 2$), two orders of magnitude higher than the bulk Milky Way composition at the same metallicity[2,3]. The high abundance ratios of [K/Fe] are complimented by peculiarly low abundance ratios of magnesium ($[{\rm Mg/Fe}] < -1$), an order of magnitude lower than what is observed in the Milky Way. This signature has, to date, not been observed elsewhere in the Milky Way or its satellite systems.%\footnote{There are claims that the same abundance signature is observed in NGC~2808[4], but our Figure~\ref{fig:mgk} shows the pattern in NGC~2808 is limited to a mild correlation in Mg-K abundances. Another study[5] reports on a star in the ultra-faint dwarf galaxy Tri~II with the peculiar Mg/K signature, but this claim is disputed by follow-up observations by CI Ji.}
 
 % difficult to make potassium in net quantities, but also difficult to produce  K while depleting  Mg.
 %  theoretical attempts failed.
@@ -94,28 +88,39 @@ For some  stars in NGC~2419 where high-resolution spectra have been obtained, th
 
 %We require detailed chemical abundances of many stars showing the Mg/K abundance signature in order to determine (1) if the Mg/K abundance signature is related to a peculiar pattern of neutron-capture abundances, and (2) to understand the mechanisms and conditions that produce this signature. 
 
-
-
- We searched the second data release of LAMOST to identify candidate stars that share the Mg/K signature. Specifically we used the data-driven spectrum predictions[6] and a  matched filter algorithm to identify stars with significant flux residuals at the potassium doublet near 766\,nm and the magnesium triplet at 518\,nm. 
- %Our data-driven model includes the stellar parameters $T_{\rm eff}$, $\log{g}$, $[{\rm Fe/H}]$ and $[\alpha/{\rm Fe}]$, and a noise term at each pixel. 
- Conceptually our approach can be described as, for each star, subtracting the median spectrum for stars with similar properties ($T_{\rm eff}$, $\log{g}$, $[{\rm Fe/H}]$ and $[\alpha/{\rm Fe}]$), and identifying flux residuals that are significant above the noise in the data, and above the scatter in flux for stars with similar properties. Any star  with flux residuals at the potassium or magnesium lines, that is significant above the combined data and model noise, are likely due to significant enhancement or depletion in that particular element.  We identified 112 Mg/K candidates from 500,000 giant stars (Figure 1).
-
-\begin{figure}[t!]
-	\centering
-	\includegraphics[width=0.9\textwidth]{figures/posterchild.png}
-	\caption{\small LAMOST spectrum (black) and the best-fit data-driven model (red) for a candidate Mg/K star.}
-	\label{fig:spectra}\vspace{-1em}
-\end{figure}
-
-
-\begin{wrapfigure}{R}{0.5\textwidth}
+\setcounter{figure}{1}
+\begin{wrapfigure}{R}{0.35\textwidth}
 \begin{center}
-	\includegraphics[width=0.5\textwidth]{figures/tmp.png}
-	\caption{\small{\emph{Top panel:} Detailed chemical abundance ratios (as labelled) for stars in NGC~2419[2,3], NGC~2808[4], and the Milky Way (grey; [7]). \emph{Other panels:} elemental abundances for stars in NGC~2419[2], which suggest a relation between light (e.g., Mg, K) elemental abundances and neutron-capture abundances.}}
+	\vspace{-2em}
+	\includegraphics[width=0.35\textwidth]{figures/figure2.png}
+	\caption{\small{Detailed chemical abundance ratios (as labelled) for stars in NGC~2419[2,3] and the Milky Way (grey; [7]). Green markers indicate the 112 Mg/K candidates we identified  from LAMOST. Purple and orange markers indicate Mg-normal and Mg-poor populations in NGC~2419[2], respectively, which suggest a relation between light (e.g., Sc, Mg, K) and heavy (e.g., Eu, Ba) elemental abundances.}}
 	\vspace{-2em}
 	\label{fig:mgk}
 \end{center}
 \end{wrapfigure}
+
+
+Theoretical attempts to reproduce the Mg/K signature find that temperatures between 100\,MK and 200\,MK are necessary unless extreme densities are invoked ($>10^8\,{\rm g\,cm}^{-3}$). These calculations, if correct, rule out many mechanisms, including core- and shell-burning of low-mass stars, high-mass and super-massive stars, and normal asymptotic giant branch stars. Two of the potential mechanisms remaining are pair-instability supernovae, and super asymptotic giant branch stars with a binary companion. A large sample of Mg/K stars with detailed chemical abundances are needed to test these hypotheses, including odd-Z (Na, Al, K), $\alpha$-particle capture (Ca, Ti, Si, Mg), Fe-peak (Sc, V, Mn, Ni, Cr, Fe), and neutron-capture elements (Y, Zr, Ba, Eu, Ce, Nd). 
+\setcounter{figure}{0}
+\begin{figure}[h!]
+	\centering\vspace{-1em}
+	\includegraphics[width=\textwidth]{figures/posterchild.png}
+	\vspace{-1em}
+\caption{\small LAMOST spectrum (black) and the best-fit data-driven model (red) for a candidate Mg/K star.}\vspace{-2em}
+	\label{fig:spectra}\end{figure}
+
+
+For some  stars in NGC~2419 where high-resolution spectra have been obtained, those data indicate a correlation between the abundances of neutron-capture elements, with the magnesium and potassium abundances. Unfortunately the existing sample of abundances are insufficient to discriminate between these hypotheses, and the distance to NGC~2419, 85\,kpc, makes it prohibitively expensive to acquire high signal-to-noise (S/N), high-resolution spectra for a large number of stars.
+
+
+
+
+ We searched the second data release of LAMOST to identify candidate stars that share the Mg/K signature. Specifically we used the data-driven spectrum predictions[6] and a  matched filter algorithm to identify stars with significant flux residuals at the potassium doublet near 766\,nm and the magnesium triplet at 518\,nm. 
+ %Our data-driven model includes the stellar parameters $T_{\rm eff}$, $\log{g}$, $[{\rm Fe/H}]$ and $[\alpha/{\rm Fe}]$, and a noise term at each pixel. 
+ Conceptually our approach can be described as, for each star, subtracting the median spectrum for stars with similar properties ($T_{\rm eff}$, $\log{g}$, $[{\rm Fe/H}]$ and $[\alpha/{\rm Fe}]$), and identifying flux residuals that are significant above the noise in the data, and above the scatter in flux for stars with similar properties. Any star  with flux residuals at the potassium or magnesium lines, that is significant above the combined data and model noise, are due to significant enhancement or depletion in that element.  We identified 112 Mg/K candidates from 500,000 giant stars (Figure 1).
+
+
+
 
 
 
@@ -132,6 +137,7 @@ We propose to observe the brightest \NumStars\ of our candidates during \NumNigh
 \reference{Venn et al.}{MNRAS}{466}{3741}{2017}
 \reference{Ho et al.}{ApJ}{836}{5}{2017}
 \reference{Abolfathi et al.}{ApJS, accepted 28 Nov 2017}{}{arXiv:1707.09322}{2017}
+%\reference{Kemp et al.}{submitted to MNRAS}{}{}{2018}
 }
 
 
