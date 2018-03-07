@@ -4,7 +4,7 @@ from astropy.coordinates import SkyCoord
 from astropy import units as u
 from collections import OrderedDict
 
-candidates = Table.read("mgk-candidates.csv")
+candidates = Table.read("all-mgk-candidates.csv")
 
 # Only propose to observe V < 14
 keep = (~candidates["Vmag"].mask) \
@@ -62,6 +62,9 @@ for candidate in candidates:
 
 with open("candidates.tex", "w") as fp:
     fp.write("\n".join(output))
+
+
+candidates.write("candidates.csv")
 
 
 # Check SMOKA for each candidate.
@@ -144,4 +147,3 @@ for i, candidate in enumerate(candidates):
     else:
         # You gotta justify this in your proposal. How much data exists?
         raise a
-
